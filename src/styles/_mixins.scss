@@ -1,0 +1,20 @@
+@mixin button-border {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: 1px solid var(--hero-text-color);
+  border-radius: 8px 0px;
+}
+
+@mixin button-background {
+  display: flex;
+  max-width: max-content;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 25px;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border-radius: 8px 0px;
+}
