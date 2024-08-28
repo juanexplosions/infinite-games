@@ -1,10 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { ThemeProvider } from "./contexts/ThemeContext";
+import { DataProvider } from "./contexts/DataContext";
 
-createRoot(document.getElementById('root')).render(
+import App from "./App.jsx";
+import "/src/styles/global.scss";
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <DataProvider>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </DataProvider>
+  </StrictMode>
+);
