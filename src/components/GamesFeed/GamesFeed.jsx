@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
+import GameCard from "../GameCard/GameCard";
 import "./GamesFeed.scss";
 
 export default function GamesFeed() {
@@ -18,8 +19,11 @@ export default function GamesFeed() {
     };
 
     fetch(url, options)
-      .then((response) => response.json()) /* fetch responde objeto // que trae el reponse (valor, tipo de datos) // que mas hay ademas de .json */
-      .then((data) => {  /* por que otro then // promise */
+      .then((response) =>
+        response.json()
+      ) /* fetch responde objeto // que trae el reponse (valor, tipo de datos) // que mas hay ademas de .json */
+      .then((data) => {
+        /* por que otro then // promise */
         setGames(data);
         setLoading(false);
       })
@@ -35,14 +39,17 @@ export default function GamesFeed() {
       {loading ? (
         <p>Loading games...</p>
       ) : (
-        <ul>
+        <div>
           {games.slice(0, 5).map((game) => (
-            <li key={game.id}>
-              <h2>{game.title}</h2>
-              <p>{game.genre}</p>
-            </li>
+            <GameCard
+              key={game.id}
+              image={game.thumbnail}
+              title={game.title}
+              genre={game.genre}
+              description={game.short_description}
+            />
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

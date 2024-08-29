@@ -10,6 +10,11 @@
     rgba(255, 255, 255, 0.28) 55%,
     rgba(255, 255, 255, 0) 100%
   );
+  --text-color: #080316;
+  --card-color: #F8F8FA;
+  --border-color: rgba(233, 235, 248, 0.8);
+  --info-button-color: #637084;
+
 }
 
 .dark-mode {
@@ -24,4 +29,8 @@
     rgba(8, 3, 22, 0.28) 55%,
     rgba(8, 3, 22, 0) 100%
   );
+  --text-color: #EEE9FF;
+  --card-color: #1F1C23;
+  --border-color: rgba(233, 235, 248, 0.25);
+  --info-button-color: #8E8E8E;
 }

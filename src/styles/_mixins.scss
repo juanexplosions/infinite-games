@@ -1,8 +1,9 @@
-@mixin button-border {
-  padding: 12px 25px;
+@mixin button-border($border-color: var(--hero-text-color), $button-padding: 12px 25px) {
+  font-weight: 400;
+  padding: $button-padding;
   font-size: 1rem;
-  border: 1px solid var(--hero-text-color);
-  border-radius: 8px 0px;
+  border: 1px solid $border-color;
+  border-radius: $radius-border;
 }
 
 @mixin button-background {
@@ -16,5 +17,5 @@
   font-weight: 600;
   color: var(--secondary-color);
   background-color: var(--primary-color);
-  border-radius: 8px 0px;
+  border-radius: $radius-border;
 }
