@@ -1,0 +1,28 @@
+@import "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.search{
+    display: flex;
+    place-items: center;
+    position: relative;
+    @include button-border($border-color: var(--action-border-color));
+
+
+    &__input{
+        margin-left: 2rem;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    &__icon{
+        position: absolute;
+        color: var(--action-text-color);
+
+    }
+
+    input::-webkit-input-placeholder {
+        color: var(--action-text-color);
+        background-color: var(--background-color);
+    }
+}

@@ -1,0 +1,28 @@
+@import "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-transform: uppercase;
+  color: var(--text-color);
+
+  &__title {
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  &__item {
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 1.75rem;
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}

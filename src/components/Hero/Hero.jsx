@@ -1,26 +1,30 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import { useData } from "../../contexts/DataContext.jsx";
+import { fetchData } from "../../api/fetch";
 import { Icon } from "@iconify/react";
 import "./Hero.scss";
 import logo from "../../assets/infinite-games-logo.svg";
 
 export default function Hero() {
   const { theme, toggleTheme } = useTheme();
-  const { data, loading, error, fetchGames } = useData();
+  const [heroGame, setHeroGame] = useState(null);
+
+
+  // feetch individual
 
   useEffect(() => {
-    const url =
-      "https://free-to-play-games-database.p.rapidapi.com/api/game?id=540";
-    fetchGames(url);
+    fetchData("/api/game?id=540").then((result) => {
+      setHeroGame(result);
+    });
   }, []);
 
   return (
     <header className={`hero ${theme}`}>
       <div className="hero__background-container">
-        {data && data.screenshots && (
+        {heroGame && heroGame.screenshots && (
           <img
-            src={data.screenshots[0].image}
+            src={heroGame.screenshots[0].image}
             className="hero__background"
             alt=""
           />

@@ -1,2 +1,24 @@
-@import "/Users/juanfeperalta/Documents/Playground/infinite-games/src/styles/theme.scss";
+@import "../../styles/theme.scss";
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
+.feed {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 95%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &__games{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

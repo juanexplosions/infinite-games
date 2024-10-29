@@ -3,6 +3,7 @@ import { useTheme } from "./contexts/ThemeContext";
 
 import Hero from "./components/Hero/Hero";
 import GamesFeed from "./components/GamesFeed/GamesFeed";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const { theme } = useTheme();
@@ -15,6 +16,7 @@ function App() {
     <>
       <Hero />
       <GamesFeed />
+      <Footer />
     </>
   );
 }
