@@ -6,6 +6,7 @@ export default function SearchBar() {
     <div className="search">
       <Icon className="search__icon" icon="rivet-icons:magnifying-glass" />
       <input type="text" placeholder="What are you looking for?" className="search__input" />
+      hola
     </div>
   );
 }
